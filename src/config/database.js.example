@@ -1,0 +1,33 @@
+## Configuração do Banco de Dados
+
+1. Crie um banco de dados PostgreSQL local.
+2. Configure as variáveis de ambiente no arquivo `.env` com as informações do banco de dados.
+
+   Exemplo de um arquivo `.env`:
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=nome-do-banco
+DB_USER=seu-usuario
+DB_PASSWORD=sua-senha
+
+3. Copie o arquivo `.env.example` e renomeie-o para `.env`, preenchendo com as informações reais do seu banco de dados.
+
+4. No arquivo `database.js`, você encontrará a configuração do Sequelize para se conectar ao banco de dados. Certifique-se de ajustá-lo conforme necessário para suas configurações.
+
+Exemplo de `database.js`:
+
+```javascript
+const { Sequelize } = require('sequelize');
+require('dotenv').config(); // Carrega variáveis de ambiente do arquivo .env
+
+const sequelize = new Sequelize({
+  dialect: 'postgres',
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  database: process.env.DB_NAME,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+});
+
+module.exports = sequelize;

@@ -1,0 +1,23 @@
+{
+  "name": "taskhub-userautenticationandautorization",
+  "version": "1.0.0",
+  "description": "User Authentication and Authorization Microservice:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TaskHub-UserAutenticationAndAutorization"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.33.0"
+  }
+}
